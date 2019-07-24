@@ -15,5 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//配置两个测试路由
 Route::get('/user','Usercontroller@index');
-
+Route::get('/user/test','Usercontroller@test');

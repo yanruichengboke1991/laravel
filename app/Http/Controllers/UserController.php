@@ -9,11 +9,16 @@ class UserController extends Controller
 
 
   function index(){
-  	echo 111;die();
+  	$msg['status'] = 'success';
+  	$msg['errorcode'] = 200;
+  	$msg['msg'] = 'ok';
+  	echo json_encode($msg);
   }
 
 
 
-
+  function test(){
+  	 echo 'hello world!';
+  }
 
 };
