@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use DB;
 class UserController extends Controller
 {
 
@@ -17,8 +17,12 @@ class UserController extends Controller
 
 
 
+
   function test(){
-  	 echo 'hello world!';
+
+	$student = DB::select("select * from card");
+	dd($student);
+
   }
 
 };
