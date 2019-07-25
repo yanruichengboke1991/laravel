@@ -20,6 +20,7 @@ Route::get('/user','Usercontroller@index');
 
 Route::get('/user/test2','Usercontroller@test2');
 
+Route::get('/user/test','Usercontroller@test');
 
 
 // Route::get('foo',function(){

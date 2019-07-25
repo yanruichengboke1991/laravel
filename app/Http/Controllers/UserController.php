@@ -15,7 +15,9 @@ class UserController extends Controller
     	echo json_encode($msg);
     }
 
-
+    /**
+    *c查询
+    */
     function test2(){
       	$card = DB::select("select goods_id,cat_id,goods_name from goods");
         //去除满足条件的第一条
@@ -30,6 +32,27 @@ class UserController extends Controller
         $cj = DB::table("users")->select("user_name","password")->get();
         dd($cj);
     }
+
+
+    /**
+    *修改
+    */
+    function test(){
+      $id = request()->route('id');//接收id参数
+      //更新数据
+      $id = 4;
+      $age = Db::table("users")->where("user_id","=",$id)->update(['user_name'=>'用户名']);
+      // var_dump($age); 为真就是更新成功
+      $id = 6;
+      //删除数据
+      $res = DB::table('users')->where('user_id','=',$id)->delete();
+      if($res){
+        return 'tongpankt.com提示您删除成功';
+      }else{
+         return 'tongpankt.com提示您删除失败';
+      }
+    }
+
 
     function show(){
       $id = 1;
