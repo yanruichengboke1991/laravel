@@ -16,7 +16,7 @@ class UserController extends Controller
     }
 
     /**
-    *c查询
+    *c查询  
     */
     function test2(){
       	$card = DB::select("select goods_id,cat_id,goods_name from goods");
