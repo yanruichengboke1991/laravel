@@ -35,13 +35,18 @@ class UserController extends Controller
 
 
     /**
-    *修改
+    *修改 
     */
     function test(){
       $id = request()->route('id');//接收id参数
-      //更新数据
+      //更新数据  
       $id = 4;
       $age = Db::table("users")->where("user_id","=",$id)->update(['user_name'=>'用户名']);
+      if($age){
+        return '更新成功';
+      }else{
+        return '删除成功';
+      }
       // var_dump($age); 为真就是更新成功
       $id = 6;
       //删除数据
@@ -58,4 +63,32 @@ class UserController extends Controller
       $id = 1;
       return view('User.profile',['User'=>User::findOrfail($id)]);
     }
+
+    function test3(){
+      $users = DB::table('users')->paginate(1);
+      return view('user.test',['users'=>$users]);
+    }
+
+
+
+
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
