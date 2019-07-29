@@ -69,7 +69,29 @@ class UserController extends Controller
       return view('user.test',['users'=>$users]);
     }
 
+    //分页代码
+     function page2 (){
+         $users = DB::table('users')->paginate(2);
+      return view('user.test',['users'=>$users]);
+     }
 
+     //框架自带分页
+     function page3(){
+
+       // $users = DB::table('users')->paginate(3);
+       //只显示上一页，下一页的操作如下：
+       // $users = DB::table('users')->simplePaginate(1);
+      //Eloquent模型分页
+     $users = App\User::paginate(15);
+
+
+
+
+
+      return view('user.test',['users'=>$users]);
+
+
+     }
 
 
 };

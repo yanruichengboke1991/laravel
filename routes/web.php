@@ -22,7 +22,13 @@ Route::get('/user/test2','Usercontroller@test2');
 Route::get('/user/test','Usercontroller@test');
 
 Route::get('/user/test3','Usercontroller@test3');
+
+
+
+Route::get('/user/page3','Usercontroller@page3');
 // Route::get('foo',function(){
 // 	return 'hello world!';
 // });
 
+//配置分页代码
+Route::get('/user/page2','Usercontroller@page2');
